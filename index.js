@@ -7,6 +7,8 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(cors());
+app.use(express.json());  // Parse JSON request bodies
+app.use(express.urlencoded({ extended: true })); 
 app.use('/', router);   
 
 // New route to display "Hello, World!"
